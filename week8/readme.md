@@ -1,38 +1,27 @@
+
+```markdown
 # 🤖 RAG Q&A Chatbot – Loan Approval Dataset
 
-This project implements a **Retrieval-Augmented Generation (RAG)** based chatbot that answers natural language questions on a loan approval dataset. It intelligently retrieves relevant data and either uses a **generative LLM (Flan-T5)** or **Pandas-based analytics** to respond.
-
-![App Screenshot](https://user-images.githubusercontent.com/00000000/demo.png) <!-- Replace with actual screenshot if public -->
+This is a Retrieval-Augmented Generation (RAG) chatbot that allows users to ask intelligent questions about a **Loan Approval Dataset**. It combines **vector-based document retrieval** with **Pandas analytics** and **generative AI models** (like Hugging Face’s `flan-t5`) to answer user queries.
 
 ---
 
-## 📌 Features
+## 📁 Project Structure
 
-- 🔎 **Semantic Search** using sentence embeddings + FAISS
-- 🧠 **Hybrid Answering Engine**:
-  - 📊 Uses **Pandas** for smart analytics (averages, counts, comparisons)
-  - 🧬 Uses **LLMs** for unstructured context-based answers
-- 🧾 **Interactive Streamlit UI**
-- 📁 Upload your own dataset (optional extension)
+```
 
----
-
-## 🗂️ Project Structure
-
-rag_loan_chatbot/
+rag\_loan\_chatbot/
 ├── data/
-│ └── Training Dataset.csv # Source data (Kaggle)
+│   └── Training Dataset.csv         # Source data (Kaggle)
 ├── embeddings/
-│ └── faiss_index.pkl # Saved FAISS vector index
-├── app.py # Streamlit app
-├── retriever.py # Embedding + vector search logic
-├── generator.py # Answer logic (Pandas + LLM)
-├── requirements.txt # Python dependencies
-└── README.md # You're here
+│   └── faiss\_index.pkl              # Saved FAISS vector index
+├── app.py                           # Streamlit app
+├── retriever.py                     # Embedding + vector search logic
+├── generator.py                     # Answer logic (Pandas + LLM)
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project documentation
 
-yaml
-Copy
-Edit
+````
 
 ---
 
@@ -42,70 +31,118 @@ Edit
 ```bash
 git clone https://github.com/YashGunjal16/CSi-Assignments.git
 cd CSi-Assignments/week7/rag_loan_chatbot
-2. Create virtual environment
-bash
-Copy
-Edit
+````
+
+### 2. Create virtual environment
+
+```bash
 python -m venv venv
-venv\Scripts\activate    # On Windows
+venv\Scripts\activate        # On Windows
 # source venv/bin/activate  # On Mac/Linux
-3. Install dependencies
-bash
-Copy
-Edit
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
-4. Run the app
-bash
-Copy
-Edit
+```
+
+### 4. Run the app
+
+```bash
 streamlit run app.py
-🔍 Sample Questions You Can Ask
-Question	Answer Engine
-How many self-employed applicants are there?	🧮 Pandas
-Do married applicants get higher loan amounts?	🧮 Pandas
-What is the average loan for graduates vs non-graduates?	🧮 Pandas
-What factors affect loan approval?	💬 LLM
-Are applicants from rural areas more likely to be approved?	💬 LLM
-
-📊 Dataset
-Source: Loan Approval Dataset – Kaggle
-
-Used for educational and prototyping purposes only.
-
-🤝 Credits
-SentenceTransformers
-
-FAISS (Facebook AI Similarity Search)
-
-HuggingFace Transformers
-
-Streamlit
-
-Dataset by: Sonali Singh (Kaggle)
-
-📌 Future Enhancements
- User-uploadable CSV support
-
- Data visualizations in responses
-
- Multilingual question answering
-
- Switchable LLM (Gemini, GPT, Claude, etc.)
-
-📸 UI Preview
-<img src="https://github.com/YashGunjal16/CSi-Assignments/blob/main/week7/rag_loan_chatbot/demo.gif" width="700"/>
-💡 License
-This project is built for educational use. Please check the dataset’s original license before redistribution.
-
-yaml
-Copy
-Edit
+```
 
 ---
 
-Let me know if you want:
-- A **live badge** or deploy link section
-- **Deployment-ready zip**
-- Auto-push to GitHub
+## 🔍 Sample Questions You Can Ask
 
-Ready to go 🎯
+Here are a few example queries:
+
+| # | Question                                                    |
+| - | ----------------------------------------------------------- |
+| 1 | How many applicants are self-employed?                      |
+| 2 | Do married applicants get higher loan amounts?              |
+| 3 | What is the average loan for graduates?                     |
+| 4 | Are rural applicants more likely to get approved?           |
+| 5 | How many dependents do approved applicants have on average? |
+
+---
+
+## 🧠 How It Works
+
+* 🔎 **Retriever (`retriever.py`)**: Uses `sentence-transformers` to embed your question and retrieves relevant records using FAISS.
+* 🧮 **Analyzer (`generator.py`)**:
+
+  * If the question is analytical (e.g. count, mean), it runs Pandas logic.
+  * Otherwise, it uses a lightweight LLM (like `flan-t5-base`) to generate a smart answer based on retrieved context.
+
+---
+
+## 📊 Dataset Used
+
+* **Dataset**: [Loan Approval Prediction - Kaggle](https://www.kaggle.com/datasets/sonalisingh1411/loan-approval-prediction)
+* **File**: `Training Dataset.csv` (already included in `/data` folder)
+
+---
+
+## 🖥️ Screenshot
+
+> Example UI View
+
+![RAG Chatbot Screenshot]<img src="https://github.com/YashGunjal16/CSi-Assignments/blob/main/week7/rag_loan_chatbot/demo.gif" width="700"/>
+
+
+---
+
+## 🧾 Requirements
+
+Install dependencies from:
+
+```
+requirements.txt
+```
+
+Includes:
+
+* `streamlit`
+* `sentence-transformers`
+* `faiss-cpu`
+* `pandas`
+* `transformers`
+* `scikit-learn`
+
+---
+
+## 📌 Future Enhancements
+
+* [ ] Enable user CSV upload
+* [ ] Add charts for numeric answers
+* [ ] Add support for other datasets
+* [ ] Support for OpenAI / Claude / Gemini if API is available
+
+---
+
+## 🙌 Acknowledgements
+
+* [Streamlit](https://streamlit.io/)
+* [Hugging Face Transformers](https://huggingface.co/)
+* [FAISS](https://github.com/facebookresearch/faiss)
+* [Kaggle Dataset](https://www.kaggle.com/datasets/sonalisingh1411/loan-approval-prediction)
+
+---
+
+## 📃 License
+
+For educational use only. Dataset license per original Kaggle terms.
+
+```
+
+---
+
+### ✅ How to use this:
+- Just copy-paste into a file named `README.md` inside your `rag_loan_chatbot/` folder.
+- Replace the image link in `![RAG Chatbot Screenshot]()` with a hosted image URL or remove it if unnecessary.
+
+Let me know if you'd like me to generate a **GitHub badge**, **deployment badge**, or **add image hosting tips**.
+```
