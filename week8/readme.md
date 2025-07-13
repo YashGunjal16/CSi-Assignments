@@ -1,5 +1,6 @@
 
 ```markdown
+````
 # 🤖 RAG Q&A Chatbot – Loan Approval Dataset
 
 This is a Retrieval-Augmented Generation (RAG) chatbot that allows users to ask intelligent questions about a **Loan Approval Dataset**. It combines **vector-based document retrieval** with **Pandas analytics** and **generative AI models** (like Hugging Face’s `flan-t5`) to answer user queries.
@@ -8,7 +9,7 @@ This is a Retrieval-Augmented Generation (RAG) chatbot that allows users to ask 
 
 ## 📁 Project Structure
 
-```
+
 
 rag\_loan\_chatbot/
 ├── data/
@@ -25,9 +26,9 @@ rag\_loan\_chatbot/
 
 ---
 
-## 🚀 Setup Instructions
-
+````
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/YashGunjal16/CSi-Assignments.git
 cd CSi-Assignments/week7/rag_loan_chatbot
@@ -90,7 +91,7 @@ Here are a few example queries:
 
 > Example UI View
 
-![RAG Chatbot Screenshot]<img src="https://github.com/YashGunjal16/CSi-Assignments/blob/main/week7/rag_loan_chatbot/demo.gif" width="700"/>
+![RAG Chatbot Screenshot](../week8/screenshots/chatbot_ui.png)
 
 
 ---
@@ -139,7 +140,7 @@ For educational use only. Dataset license per original Kaggle terms.
 ```
 
 ---
-
+````
 ### ✅ How to use this:
 - Just copy-paste into a file named `README.md` inside your `rag_loan_chatbot/` folder.
 - Replace the image link in `![RAG Chatbot Screenshot]()` with a hosted image URL or remove it if unnecessary.
