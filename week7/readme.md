@@ -2,7 +2,7 @@
 
 This is a simple interactive web application built using **Streamlit** that predicts whether a passenger would have survived the Titanic disaster based on key input features like age, fare, class, and gender.
 
-🔗 **Live App**: [Click here to try it out]((https://deathprediction-n2cbafan4mvosiesxtmrrx.streamlit.app/))
+🔗 **Live App**: [Click here to try it out](https://deathprediction-n2cbafan4mvosiesxtmrrx.streamlit.app/)
 
 ---
 
